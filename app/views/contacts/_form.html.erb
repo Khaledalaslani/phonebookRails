@@ -1,0 +1,29 @@
+<%= form_with(model: contact) do |form| %>
+  <!-- Other contact fields -->
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <div id="phone-numbers-fields">
+    <%= form.fields_for :phone_numbers do |phone_number_fields| %>
+      <%= phone_number_fields.label :number %>
+      <%= phone_number_fields.text_field :number %>
+    <% end %>
+  </div>
+  <button onclick='add()'>add new number</button>
+  <%= form.submit %>
+<% end %>
+<script>
+  var i = 1;
+
+
+  function add() {
+  var phoneNumbersFields = document.getElementById("phone-numbers-fields");
+  var newForm = document.createElement('div');
+
+  newForm.innerHTML = '<label>Number: </label>' +
+    '<input type="text" name="contact[phone_numbers_attributes][' + i + '][number]" required>' +
+    '<input type="hidden" name="contact[phone_numbers_attributes][' + i + '][_destroy]" id="contact_phone_numbersattributes' + i + '__destroy">';
+
+  phoneNumbersFields.appendChild(newForm);
+  i++;
+  }
+</script>
