@@ -1,24 +1,18 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Installation
+* Clone the repository
+* Install the requirements
+* Run the migrations
+* Run the server
+# Database
+The database used is sqlite3 we have two models the relationship between the two models is one to many
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Contact
+* Phone number
+* Contact has many phones
+* Phone number belongs to a contact
+# Usage
+* run the server
+* go to the url
+* add a contact
+* view the contact
